@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="frame">
+        <h1 id="hms" class="clk"> 00: 00: 00  AM </h1>
+
+        <h1 id="dmy">10 : 06: 22</h1>
+    </div>
+
+    <script>
+        function display_time(){
+            let date= new Date();
+            var h = date.getHours();
+            var m = date.getMinutes();
+            var s = date.getSeconds();
+            var d = date.getDay();
+            var mn = date.getMonth();
+            var y = date.getFullYear();
+            var dt = date.getDate();
+
+            var ampm = "AM";
+            if(h > 12){
+                ampm = "PM";
+            } 
+
+            if(h>12){
+                h = h-12;
+            };
+            if(h<10){
+                h = `0${h}`;
+            }
+            if(m<10){
+                m =`0${m}`;
+            }
+            if(s<10){
+                s =`0${s}`;
+            }
+            let arrayOfMonths = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+            let arrayOfDays = [ 'Sunday','Monday','Tuesday','Wednesday','Thusday','Friday','Saturday'];
+            
+
+            var time = `${h} : ${m} :${s} ${ampm}`;
+            var day = `${dt} ${arrayOfMonths[mn]} ${y} <br> ${arrayOfDays[d] }`;
+            document.getElementById("hms").innerHTML= time;
+            document.getElementById("dmy").innerHTML= day;
+
+            setInterval(display_time, 1000);
+        }
+
+        display_time();
+
+    </script>
+ 
+    
+</body>
+</html>

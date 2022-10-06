@@ -1,0 +1,35 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    
+    font-family: 'Orbitron', sans-serif;
+  color: white;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    background-color: black;
+}
+
+.frame{
+    width: 400px;
+    padding: 10px;
+    background-color: rgb(130, 225, 177);
+    border: 5px solid;
+    border-image: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82) 1;
+}
+
+.frame h1{
+    color: black;
+}
+
+
+
+#hms{ 
+    font-size: 43px;
+}
